@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ChooseWebsiteTableViewController.h
 //  OFFWeb
 //
 //  Created by Adrian Lozano on 10/23/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ChooseWebsiteTableViewController : UITableViewController
 
 @end

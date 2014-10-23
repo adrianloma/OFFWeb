@@ -14,13 +14,17 @@
 		3A9785C219F9BBF900B86108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9785C119F9BBF900B86108 /* main.m */; };
 		3A9785C619F9BBF900B86108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9785C519F9BBF900B86108 /* AppDelegate.m */; };
 		3A9785C919F9BBF900B86108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9785C719F9BBF900B86108 /* Main.storyboard */; };
-		3A9785CC19F9BBF900B86108 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9785CB19F9BBF900B86108 /* ViewController.m */; };
+		3A9785CC19F9BBF900B86108 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9785CB19F9BBF900B86108 /* MainMenuViewController.m */; };
 		3A9785CE19F9BBF900B86108 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9785CD19F9BBF900B86108 /* Images.xcassets */; };
 		3A9785D519F9BBF900B86108 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9785D419F9BBF900B86108 /* XCTest.framework */; };
 		3A9785D619F9BBF900B86108 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9785B519F9BBF900B86108 /* Foundation.framework */; };
 		3A9785D719F9BBF900B86108 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9785B919F9BBF900B86108 /* UIKit.framework */; };
 		3A9785DF19F9BBF900B86108 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A9785DD19F9BBF900B86108 /* InfoPlist.strings */; };
 		3A9785E119F9BBF900B86108 /* OFFWebTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9785E019F9BBF900B86108 /* OFFWebTests.m */; };
+		3A9785ED19F9BFD400B86108 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9785EC19F9BFD400B86108 /* BrowserViewController.m */; };
+		3A9785F119F9C02000B86108 /* ArticlesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9785F019F9C02000B86108 /* ArticlesTableViewController.m */; };
+		3A9785F419F9C12C00B86108 /* logoOFFWeb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9785F319F9C12C00B86108 /* logoOFFWeb.png */; };
+		3A9785F819F9C30500B86108 /* ChooseWebsiteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9785F719F9C30500B86108 /* ChooseWebsiteTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +49,21 @@
 		3A9785C419F9BBF900B86108 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A9785C519F9BBF900B86108 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3A9785C819F9BBF900B86108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3A9785CA19F9BBF900B86108 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3A9785CB19F9BBF900B86108 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3A9785CA19F9BBF900B86108 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		3A9785CB19F9BBF900B86108 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		3A9785CD19F9BBF900B86108 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A9785D319F9BBF900B86108 /* OFFWebTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OFFWebTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9785D419F9BBF900B86108 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3A9785DC19F9BBF900B86108 /* OFFWebTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OFFWebTests-Info.plist"; sourceTree = "<group>"; };
 		3A9785DE19F9BBF900B86108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3A9785E019F9BBF900B86108 /* OFFWebTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OFFWebTests.m; sourceTree = "<group>"; };
+		3A9785EB19F9BFD400B86108 /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		3A9785EC19F9BFD400B86108 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
+		3A9785EF19F9C02000B86108 /* ArticlesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesTableViewController.h; sourceTree = "<group>"; };
+		3A9785F019F9C02000B86108 /* ArticlesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesTableViewController.m; sourceTree = "<group>"; };
+		3A9785F319F9C12C00B86108 /* logoOFFWeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoOFFWeb.png; sourceTree = "<group>"; };
+		3A9785F619F9C30500B86108 /* ChooseWebsiteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseWebsiteTableViewController.h; sourceTree = "<group>"; };
+		3A9785F719F9C30500B86108 /* ChooseWebsiteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseWebsiteTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +126,11 @@
 				3A9785C419F9BBF900B86108 /* AppDelegate.h */,
 				3A9785C519F9BBF900B86108 /* AppDelegate.m */,
 				3A9785C719F9BBF900B86108 /* Main.storyboard */,
-				3A9785CA19F9BBF900B86108 /* ViewController.h */,
-				3A9785CB19F9BBF900B86108 /* ViewController.m */,
+				3A9785F919F9C31000B86108 /* ChooseWebsiteViewController */,
+				3A9785F519F9C13100B86108 /* Assets */,
+				3A9785F219F9C03200B86108 /* ArticlesTableViewController */,
+				3A9785EE19F9BFEF00B86108 /* BrowserViewController */,
+				3A9785EA19F9BEFB00B86108 /* MainMenuViewController */,
 				3A9785CD19F9BBF900B86108 /* Images.xcassets */,
 				3A9785BC19F9BBF900B86108 /* Supporting Files */,
 			);
@@ -150,6 +164,50 @@
 				3A9785DD19F9BBF900B86108 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A9785EA19F9BEFB00B86108 /* MainMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A9785CA19F9BBF900B86108 /* MainMenuViewController.h */,
+				3A9785CB19F9BBF900B86108 /* MainMenuViewController.m */,
+			);
+			name = MainMenuViewController;
+			sourceTree = "<group>";
+		};
+		3A9785EE19F9BFEF00B86108 /* BrowserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A9785EB19F9BFD400B86108 /* BrowserViewController.h */,
+				3A9785EC19F9BFD400B86108 /* BrowserViewController.m */,
+			);
+			name = BrowserViewController;
+			sourceTree = "<group>";
+		};
+		3A9785F219F9C03200B86108 /* ArticlesTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A9785EF19F9C02000B86108 /* ArticlesTableViewController.h */,
+				3A9785F019F9C02000B86108 /* ArticlesTableViewController.m */,
+			);
+			name = ArticlesTableViewController;
+			sourceTree = "<group>";
+		};
+		3A9785F519F9C13100B86108 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3A9785F319F9C12C00B86108 /* logoOFFWeb.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		3A9785F919F9C31000B86108 /* ChooseWebsiteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A9785F619F9C30500B86108 /* ChooseWebsiteTableViewController.h */,
+				3A9785F719F9C30500B86108 /* ChooseWebsiteTableViewController.m */,
+			);
+			name = ChooseWebsiteViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +289,7 @@
 				3A9785CE19F9BBF900B86108 /* Images.xcassets in Resources */,
 				3A9785C019F9BBF900B86108 /* InfoPlist.strings in Resources */,
 				3A9785C919F9BBF900B86108 /* Main.storyboard in Resources */,
+				3A9785F419F9C12C00B86108 /* logoOFFWeb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A9785CC19F9BBF900B86108 /* ViewController.m in Sources */,
+				3A9785CC19F9BBF900B86108 /* MainMenuViewController.m in Sources */,
+				3A9785ED19F9BFD400B86108 /* BrowserViewController.m in Sources */,
+				3A9785F819F9C30500B86108 /* ChooseWebsiteTableViewController.m in Sources */,
 				3A9785C619F9BBF900B86108 /* AppDelegate.m in Sources */,
 				3A9785C219F9BBF900B86108 /* main.m in Sources */,
+				3A9785F119F9C02000B86108 /* ArticlesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +518,7 @@
 				3A9785E619F9BBF900B86108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A9785E719F9BBF900B86108 /* Build configuration list for PBXNativeTarget "OFFWebTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +527,7 @@
 				3A9785E919F9BBF900B86108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

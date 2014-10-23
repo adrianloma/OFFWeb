@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 TeamCook. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainMenuViewController.h"
 
-@interface ViewController ()
+@interface MainMenuViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainMenuViewController
 
 - (void)viewDidLoad
 {
@@ -26,4 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)chooseWebsiteButton:(id)sender {
+}
+
+- (IBAction)savedWebsitesButton:(id)sender {
+}
 @end
