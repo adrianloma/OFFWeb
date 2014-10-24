@@ -1,18 +1,18 @@
 //
-//  BrowserViewController.m
+//  ChooseWebsiteViewController.m
 //  OFFWeb
 //
 //  Created by Adrian Lozano on 10/23/14.
 //  Copyright (c) 2014 TeamCook. All rights reserved.
 //
 
-#import "BrowserViewController.h"
+#import "ChooseWebsiteViewController.h"
 
-@interface BrowserViewController ()
+@interface ChooseWebsiteViewController ()
 
 @end
 
-@implementation BrowserViewController
+@implementation ChooseWebsiteViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,5 +48,8 @@
 
 - (IBAction)backButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)wikipediaButton:(id)sender {
 }
 @end

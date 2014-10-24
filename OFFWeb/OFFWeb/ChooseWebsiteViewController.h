@@ -1,5 +1,5 @@
 //
-//  BrowserViewController.h
+//  ChooseWebsiteViewController.h
 //  OFFWeb
 //
 //  Created by Adrian Lozano on 10/23/14.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BrowserViewController : UIViewController
+@interface ChooseWebsiteViewController : UIViewController
 - (IBAction)backButton:(id)sender;
+- (IBAction)wikipediaButton:(id)sender;
 
 @end
