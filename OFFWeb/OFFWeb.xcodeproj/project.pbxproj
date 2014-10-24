@@ -27,6 +27,9 @@
 		3A97860419F9D08700B86108 /* ChooseWebsiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A97860319F9D08700B86108 /* ChooseWebsiteViewController.m */; };
 		3A97860719F9D3E900B86108 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A97860619F9D3E900B86108 /* Social.framework */; };
 		3A97860919F9D6CC00B86108 /* Wikipedia-globe-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A97860819F9D6CC00B86108 /* Wikipedia-globe-icon.png */; };
+		3A97860C19F9DB0F00B86108 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A97860A19F9DB0F00B86108 /* facebook.png */; };
+		3A97860D19F9DB0F00B86108 /* twitter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A97860B19F9DB0F00B86108 /* twitter.jpg */; };
+		3A97861019F9E35300B86108 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A97860F19F9E35300B86108 /* TutorialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,10 @@
 		3A97860319F9D08700B86108 /* ChooseWebsiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseWebsiteViewController.m; sourceTree = "<group>"; };
 		3A97860619F9D3E900B86108 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3A97860819F9D6CC00B86108 /* Wikipedia-globe-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wikipedia-globe-icon.png"; sourceTree = "<group>"; };
+		3A97860A19F9DB0F00B86108 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		3A97860B19F9DB0F00B86108 /* twitter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twitter.jpg; sourceTree = "<group>"; };
+		3A97860E19F9E35300B86108 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		3A97860F19F9E35300B86108 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +139,7 @@
 				3A9785C419F9BBF900B86108 /* AppDelegate.h */,
 				3A9785C519F9BBF900B86108 /* AppDelegate.m */,
 				3A9785C719F9BBF900B86108 /* Main.storyboard */,
+				3A97861119F9E35700B86108 /* TutorialViewController */,
 				3A9785F519F9C13100B86108 /* Assets */,
 				3A9785F219F9C03200B86108 /* ArticlesTableViewController */,
 				3A9785EE19F9BFEF00B86108 /* BrowserViewController */,
@@ -202,6 +210,8 @@
 		3A9785F519F9C13100B86108 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3A97860A19F9DB0F00B86108 /* facebook.png */,
+				3A97860B19F9DB0F00B86108 /* twitter.jpg */,
 				3A97860819F9D6CC00B86108 /* Wikipedia-globe-icon.png */,
 				3A9785F319F9C12C00B86108 /* logoOFFWeb.png */,
 			);
@@ -215,6 +225,15 @@
 				3A97860319F9D08700B86108 /* ChooseWebsiteViewController.m */,
 			);
 			name = ChooseWebsiteViewController;
+			sourceTree = "<group>";
+		};
+		3A97861119F9E35700B86108 /* TutorialViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A97860E19F9E35300B86108 /* TutorialViewController.h */,
+				3A97860F19F9E35300B86108 /* TutorialViewController.m */,
+			);
+			name = TutorialViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +312,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A97860D19F9DB0F00B86108 /* twitter.jpg in Resources */,
 				3A9785CE19F9BBF900B86108 /* Images.xcassets in Resources */,
+				3A97860C19F9DB0F00B86108 /* facebook.png in Resources */,
 				3A9785C019F9BBF900B86108 /* InfoPlist.strings in Resources */,
 				3A9785C919F9BBF900B86108 /* Main.storyboard in Resources */,
 				3A9785F419F9C12C00B86108 /* logoOFFWeb.png in Resources */,
@@ -316,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A97861019F9E35300B86108 /* TutorialViewController.m in Sources */,
 				3A9785CC19F9BBF900B86108 /* MainMenuViewController.m in Sources */,
 				3A9785ED19F9BFD400B86108 /* BrowserViewController.m in Sources */,
 				3A9785C619F9BBF900B86108 /* AppDelegate.m in Sources */,

@@ -1,18 +1,18 @@
 //
-//  BrowserViewController.m
+//  TutorialViewController.m
 //  OFFWeb
 //
 //  Created by Adrian Lozano on 10/23/14.
 //  Copyright (c) 2014 TeamCook. All rights reserved.
 //
 
-#import "BrowserViewController.h"
+#import "TutorialViewController.h"
 
-@interface BrowserViewController ()
+@interface TutorialViewController ()
 
 @end
 
-@implementation BrowserViewController
+@implementation TutorialViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,14 +48,5 @@
 
 - (IBAction)backButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)facebookButton:(id)sender {
-}
-
-- (IBAction)twitterButton:(id)sender {
-}
-
-- (IBAction)saveButton:(id)sender {
 }
 @end

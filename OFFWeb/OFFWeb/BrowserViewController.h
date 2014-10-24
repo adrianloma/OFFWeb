@@ -10,5 +10,8 @@
 
 @interface BrowserViewController : UIViewController
 - (IBAction)backButton:(id)sender;
+- (IBAction)facebookButton:(id)sender;
+- (IBAction)twitterButton:(id)sender;
+- (IBAction)saveButton:(id)sender;
 
 @end
