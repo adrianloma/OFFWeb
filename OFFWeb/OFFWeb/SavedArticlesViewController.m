@@ -1,18 +1,18 @@
 //
-//  BrowserViewController.m
+//  SavedArticlesViewController.m
 //  OFFWeb
 //
-//  Created by Adrian Lozano on 10/23/14.
+//  Created by Adrian Lozano on 10/27/14.
 //  Copyright (c) 2014 TeamCook. All rights reserved.
 //
 
-#import "BrowserViewController.h"
+#import "SavedArticlesViewController.h"
 
-@interface BrowserViewController ()
+@interface SavedArticlesViewController ()
 
 @end
 
-@implementation BrowserViewController
+@implementation SavedArticlesViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self loadWebsite];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,12 +35,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadWebsite
-{
-    NSURL *url = [NSURL URLWithString:@"https://en.wikipedia.org/wiki/Special:Random"];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [self.browserWebView loadRequest:requestObj];
-}
 /*
 #pragma mark - Navigation
 
@@ -56,14 +48,5 @@
 
 - (IBAction)backButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)facebookButton:(id)sender {
-}
-
-- (IBAction)twitterButton:(id)sender {
-}
-
-- (IBAction)saveButton:(id)sender {
 }
 @end

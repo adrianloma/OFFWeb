@@ -13,5 +13,6 @@
 - (IBAction)facebookButton:(id)sender;
 - (IBAction)twitterButton:(id)sender;
 - (IBAction)saveButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIWebView *browserWebView;
 
 @end
