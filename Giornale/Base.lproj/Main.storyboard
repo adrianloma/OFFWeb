@@ -32,15 +32,10 @@
                                     <action selector="irArticuloWeb:" destination="9pv-A4-QxB" eventType="touchUpInside" id="dg5-Nc-vDS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6w-gZ-kaI">
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oEv-TU-g3r">
                                 <rect key="frame" x="16" y="128" width="288" height="383"/>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula in elit id scelerisque. Fusce consequat bibendum enim sit amet finibus. Aliquam non diam mauris. Donec turpis lorem, bibendum at consectetur at, accumsan quis turpis. Fusce nec mollis sapien. Ut dapibus euismod vulputate. Duis non felis at purus mollis sollicitudin laoreet at velit. Mauris a congue dui. Maecenas vestibulum convallis nisl, quis molestie metus. Integer aliquet sed metus non tincidunt. Integer mauris urna, lacinia nec hendrerit eget, placerat non sem. Cras posuere, arcu ut molestie imperdiet, tortor nunc venenatis urna, ut efficitur augue diam efficitur mi. Quisque sed consequat mi. Quisque pretium accumsan pretium. Vivamus sem augue, iaculis vel egestas quis, tristique ut leo.
-
-Suspendisse rutrum nisl vitae volutpat bibendum. Aenean sed felis vel eros congue tristique. Curabitur ut suscipit mauris, et semper tellus. Sed ac scelerisque arcu. Morbi et erat tellus. Phasellus sodales sem mauris, ut iaculis mi vehicula id. Curabitur sit amet nisi dictum, blandit mauris sed, volutpat odio. Nulla facilisi. Sed iaculis pretium rhoncus. Pellentesque luctus quis ipsum in porta.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -49,9 +44,9 @@ Suspendisse rutrum nisl vitae volutpat bibendum. Aenean sed felis vel eros congu
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="contenidoArticulo" destination="V6w-gZ-kaI" id="8ES-gL-DVI"/>
                         <outlet property="tituloArticulo" destination="cBl-BY-Pvp" id="vek-og-hXi"/>
                         <outlet property="urlArticulo" destination="lhe-zv-9OH" id="JpG-u8-Ihj"/>
+                        <outlet property="viewArticulo" destination="oEv-TU-g3r" id="KIt-VP-T3U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *contenidoArticulo;
 @property (strong, nonatomic) IBOutlet UIButton *urlArticulo;
 - (IBAction)irArticuloWeb:(id)sender;
+@property (strong, nonatomic) IBOutlet UIWebView *viewArticulo;
 
 @property (strong, nonatomic) NSDictionary *artRec;
 

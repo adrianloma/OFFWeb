@@ -52,8 +52,8 @@
     //NSLog(@"hola en guardar");
     NSString *urlOriginal = self.vistaWeb.request.URL.absoluteString;
     NSString *titulo = [urlOriginal substringFromIndex:31];
-    NSString *url = [[NSString alloc] initWithFormat:@"http://en.wikipedia.org/w/index.php?title=%@&action=raw&section=1", titulo];
-    NSLog(url);
+    NSString *url = [[NSString alloc] initWithFormat:@"http://en.wikipedia.org/w/index.php?title=%@&action=raw", titulo];
+    //NSLog(url);
     NSURL *urlRequest = [NSURL URLWithString:url];
     
     NSString *html = [NSString stringWithContentsOfURL:urlRequest encoding:NSUTF8StringEncoding error:nil];
