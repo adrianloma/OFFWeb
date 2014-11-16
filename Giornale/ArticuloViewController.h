@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UIWebView *viewArticulo;
 
 @property (strong, nonatomic) NSDictionary *artRec;
+- (void)setArtRec:(NSDictionary*)artRec conexion:(bool)internet;
 
 @end

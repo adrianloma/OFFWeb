@@ -12,5 +12,7 @@
 @interface TablaArticulosTableViewController : UITableViewController
 
 @property (strong,nonatomic) SingletonArticulos *singleArticulos;
+@property (strong, nonatomic) IBOutlet UISwitch *switchInternet;
+- (IBAction)conectar:(id)sender;
 
 @end

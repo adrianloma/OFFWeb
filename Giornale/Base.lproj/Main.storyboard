@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="1442" y="-300"/>
         </scene>
-        <!--News-->
+        <!--Saved-->
         <scene sceneID="VXd-B4-fO0">
             <objects>
                 <tableViewController id="BSh-kj-v0i" customClass="TablaArticulosTableViewController" sceneMemberID="viewController">
@@ -91,7 +91,21 @@
                             <outlet property="delegate" destination="BSh-kj-v0i" id="S8B-jI-so3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="News" id="sgl-kx-GQn"/>
+                    <navigationItem key="navigationItem" title="Saved" id="QIr-CI-gi6">
+                        <barButtonItem key="rightBarButtonItem" title="Internet" style="plain" id="x8k-zp-OPE">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="6Y3-De-0KZ">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Internet" label="Internet"/>
+                                <connections>
+                                    <action selector="conectar:" destination="BSh-kj-v0i" eventType="valueChanged" id="Pxv-ch-1A9"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="switchInternet" destination="6Y3-De-0KZ" id="M77-iY-VCo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re0-HE-GBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +115,7 @@
         <scene sceneID="zsi-nv-0nV">
             <objects>
                 <navigationController title="Saved" id="wxh-wp-fhI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved" id="Oom-vj-3Hb"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="first" id="Oom-vj-3Hb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y5t-lj-ZVN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -189,7 +203,7 @@
         <scene sceneID="U2f-62-XEB">
             <objects>
                 <navigationController title="Navigate" automaticallyAdjustsScrollViewInsets="NO" id="95o-t9-341" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Navigate" id="5hh-Zh-xvI"/>
+                    <tabBarItem key="tabBarItem" title="Navigate" image="second" id="5hh-Zh-xvI"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eSJ-Kq-LUe">
@@ -206,4 +220,8 @@
             <point key="canvasLocation" x="466" y="371"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
 </document>

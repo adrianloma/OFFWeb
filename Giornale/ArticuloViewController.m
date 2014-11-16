@@ -8,123 +8,131 @@
 
 #import "ArticuloViewController.h"
 
-@interface ArticuloViewController ()
+@interface ArticuloViewController (){
+    bool conexion;
+}
 
 @end
 
 @implementation ArticuloViewController
 
 
-- (void)setArtRec:(NSDictionary*)artRec{
+- (void)setArtRec:(NSDictionary*)artRec conexion:(bool)internet{
     if (_artRec != artRec) {
         _artRec = artRec;
-        
+        conexion = internet;
         // Update the view.
         [self setDetallesArticulo];
     }
 }
 
-
 - (void)setDetallesArticulo {
     if (self.artRec) {
-        int veces;
-        bool sw;
-        NSString *textEnMedio;
-        NSString *contenido;
+        
         self.tituloArticulo.text = [_artRec objectForKey:@"titulo"];
         [self.urlArticulo setTitle:[_artRec objectForKey:@"url"] forState:UIControlStateNormal];
-    
-        contenido=[_artRec objectForKey:@"contenido"];
         
-        contenido =[contenido stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"];
-        contenido =[contenido stringByReplacingOccurrencesOfString:@"[[" withString:@""];
-        contenido =[contenido stringByReplacingOccurrencesOfString:@"]]" withString:@""];
+        if (!conexion){
         
-        contenido =[contenido stringByReplacingOccurrencesOfString:@"{{" withString:@"<span hidden>"];
-        contenido =[contenido stringByReplacingOccurrencesOfString:@"}}" withString:@"</span>"];
-        contenido =[contenido stringByReplacingOccurrencesOfString:@"</span><br/><span hidden>" withString:@"</span><span hidden>"];
+            int veces;
+            bool sw;
+            NSString *textEnMedio;
+            NSString *contenido;
         
-        veces = [[contenido componentsSeparatedByString:@"'''"] count]-1;
-        sw = false;
-        for (int x=0; x<veces; x++) {
-            if (!sw) {
-                NSRange loc = [contenido rangeOfString:@"'''"];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<b>"];
-                sw =true;
-            } else {
-                NSRange loc = [contenido rangeOfString:@"'''"];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</b>"];
-                sw =false;
+            contenido=[_artRec objectForKey:@"contenido"];
+            
+            //cambia saltos de linea por espacios
+            contenido =[contenido stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"];
+            contenido =[contenido stringByReplacingOccurrencesOfString:@"[[" withString:@""];
+            contenido =[contenido stringByReplacingOccurrencesOfString:@"]]" withString:@""];
+            
+            //esconde contenido extra
+            contenido =[contenido stringByReplacingOccurrencesOfString:@"{{" withString:@"<span hidden>"];
+            contenido =[contenido stringByReplacingOccurrencesOfString:@"}}" withString:@"</span>"];
+            contenido =[contenido stringByReplacingOccurrencesOfString:@"</span><br/><span hidden>" withString:@"</span><span hidden>"];
+            
+            //agrega bolds
+            veces = [[contenido componentsSeparatedByString:@"'''"] count]-1;
+            sw = false;
+            for (int x=0; x<veces; x++) {
+                if (!sw) {
+                    NSRange loc = [contenido rangeOfString:@"'''"];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<b>"];
+                    sw =true;
+                } else {
+                    NSRange loc = [contenido rangeOfString:@"'''"];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</b>"];
+                    sw =false;
+                }
             }
-        }
-        
-        veces = [[contenido componentsSeparatedByString:@"\""] count]-1;
-        sw = false;
-        for (int x=0; x<veces; x++) {
-            if (!sw) {
-                NSRange loc = [contenido rangeOfString:@"\""];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<i>"];
-                sw =true;
-            } else {
-                NSRange loc = [contenido rangeOfString:@"\""];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</i>"];
-                sw =false;
+            
+            //agrega italics
+            veces = [[contenido componentsSeparatedByString:@"\""] count]-1;
+            sw = false;
+            for (int x=0; x<veces; x++) {
+                if (!sw) {
+                    NSRange loc = [contenido rangeOfString:@"\""];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<i>"];
+                    sw =true;
+                } else {
+                    NSRange loc = [contenido rangeOfString:@"\""];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</i>"];
+                    sw =false;
+                }
             }
-        }
-        
-        veces = [[contenido componentsSeparatedByString:@"''"] count]-1;
-        sw = false;
-        for (int x=0; x<veces; x++) {
-            if (!sw) {
-                NSRange loc = [contenido rangeOfString:@"''"];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<i>"];
-                sw =true;
-            } else {
-                NSRange loc = [contenido rangeOfString:@"''"];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</i>"];
-                sw =false;
+            
+            veces = [[contenido componentsSeparatedByString:@"''"] count]-1;
+            sw = false;
+            for (int x=0; x<veces; x++) {
+                if (!sw) {
+                    NSRange loc = [contenido rangeOfString:@"''"];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<i>"];
+                    sw =true;
+                } else {
+                    NSRange loc = [contenido rangeOfString:@"''"];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</i>"];
+                    sw =false;
+                }
             }
-        }
-        
-        
-        veces = [[contenido componentsSeparatedByString:@"==="] count]-1;
-        sw = false;
-        for (int x=0; x<veces; x++) {
-            if (!sw) {
-                NSRange loc = [contenido rangeOfString:@"==="];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<h4>"];
-                sw =true;
-            } else {
-                NSRange loc = [contenido rangeOfString:@"==="];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</h4>"];
-                sw =false;
+            
+            //agrega headings
+            veces = [[contenido componentsSeparatedByString:@"==="] count]-1;
+            sw = false;
+            for (int x=0; x<veces; x++) {
+                if (!sw) {
+                    NSRange loc = [contenido rangeOfString:@"==="];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<h4>"];
+                    sw =true;
+                } else {
+                    NSRange loc = [contenido rangeOfString:@"==="];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</h4>"];
+                    sw =false;
+                }
             }
-        }
-        
-        
-        
-        veces = [[contenido componentsSeparatedByString:@"=="] count]-1;
-        sw = false;
-        for (int x=0; x<veces; x++) {
-            if (!sw) {
-                NSRange loc = [contenido rangeOfString:@"=="];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<h3>"];
-                sw =true;
-            } else {
-                NSRange loc = [contenido rangeOfString:@"=="];
-                contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</h3>"];
-                sw =false;
+            
+            veces = [[contenido componentsSeparatedByString:@"=="] count]-1;
+            sw = false;
+            for (int x=0; x<veces; x++) {
+                if (!sw) {
+                    NSRange loc = [contenido rangeOfString:@"=="];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"<h3>"];
+                    sw =true;
+                } else {
+                    NSRange loc = [contenido rangeOfString:@"=="];
+                    contenido = [contenido stringByReplacingCharactersInRange:loc withString:@"</h3>"];
+                    sw =false;
+                }
             }
+            
+            [self.viewArticulo loadHTMLString:contenido baseURL:nil];
+            
+            //NSLog(contenido);
+            
+        } else {
+            NSURL *url = [NSURL URLWithString:[_artRec objectForKey:@"url"]];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            [self.viewArticulo loadRequest:request];
         }
-        
-        
-        
-        
-        [self.viewArticulo loadHTMLString:contenido baseURL:nil];
-        
-        NSLog(contenido);
-    
-        
     }
 }
 
