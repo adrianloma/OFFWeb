@@ -155,10 +155,22 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BE-Ng-Lgd">
-                                <rect key="frame" x="235" y="80" width="69" height="30"/>
-                                <state key="normal" title="Compartir">
+                                <rect key="frame" x="268" y="70" width="40" height="40"/>
+                                <state key="normal" backgroundImage="twitter.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="compartirTwitter:" destination="hoi-nQ-Fzh" eventType="touchUpInside" id="as2-cA-5hL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j32-Ze-DiI">
+                                <rect key="frame" x="224" y="70" width="40" height="40"/>
+                                <state key="normal" backgroundImage="facebook.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="compartirFacebook:" destination="hoi-nQ-Fzh" eventType="touchUpInside" id="6Fy-AC-Hdp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,7 +233,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="facebook.png" width="256" height="256"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="twitter.png" width="256" height="256"/>
     </resources>
 </document>
