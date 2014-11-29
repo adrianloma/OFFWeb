@@ -84,4 +84,16 @@
     }
     
 }
+- (IBAction)compartirFacebook:(id)sender {
+    
+    NSString *textToPost = [NSString stringWithFormat:@"I loved this article! %@ \nShared with Giornale.", self.vistaWeb.request.URL.absoluteString];
+    
+    NSArray *activityItems = @[textToPost];
+    
+    self.activityViewController = [[UIActivityViewController alloc]
+                                   initWithActivityItems:activityItems applicationActivities:nil];
+    
+    [self presentViewController:self.activityViewController animated:YES completion:nil];
+    
+}
 @end

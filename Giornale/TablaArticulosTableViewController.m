@@ -104,7 +104,7 @@
 
 - (IBAction)conectar:(id)sender {
     if ([self.switchInternet isOn]){
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Internet activado" message:@"Los artículos se abrirán usando conexión a Internet." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Internet activated" message:@"Your articles will be opened using internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
 }

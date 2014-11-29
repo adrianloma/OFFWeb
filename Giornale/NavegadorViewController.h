@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
 #import "SingletonArticulos.h"
 
 @interface NavegadorViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIWebView *vistaWeb;
+@property (strong, nonatomic) UIActivityViewController *activityViewController;
 - (IBAction)irWikipedia:(id)sender;
 - (IBAction)guardarArticulo:(id)sender;
+- (IBAction)compartirFacebook:(id)sender;
 
 @property (strong,nonatomic) SingletonArticulos *singleArticulos;
 
