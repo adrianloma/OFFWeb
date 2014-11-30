@@ -17,10 +17,15 @@
 @implementation NavegadorViewController
 
 - (void)viewDidLoad {
+    self.vistaWeb.delegate = self;
     self.singleArticulos = [SingletonArticulos getSharedInstance];
     articulos = [self.singleArticulos getArticulos];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.loading.frame = CGRectMake(0, 0, 40, 40);
+    self.loading.center = self.view.center;
+    [self.view addSubview:self.loading];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,8 +87,19 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"URL error" message:@"The page you're trying to save is not an article. \nPage not saved." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
+}
+
+-(void)webViewDidStartLoad:(UIWebView *)vistaWeb{
+    
+    [self.loading startAnimating];
     
 }
+
+-(void)webViewDidFinishLoad:(UIWebView *)vistaWeb{
+    
+    [self.loading stopAnimating];
+}
+
 - (IBAction)compartirFacebook:(id)sender {
     
     NSString *textToPost = [NSString stringWithFormat:@"I loved this article! %@ \nShared with Giornale.", self.vistaWeb.request.URL.absoluteString];
