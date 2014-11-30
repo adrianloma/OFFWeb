@@ -124,4 +124,8 @@
         [alertView show];
     }
 }
+
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

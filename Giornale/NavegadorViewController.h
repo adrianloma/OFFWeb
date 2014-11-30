@@ -19,5 +19,6 @@
 - (IBAction)compartirFacebook:(id)sender;
 
 @property (strong,nonatomic) SingletonArticulos *singleArticulos;
+- (IBAction)backButton:(id)sender;
 
 @end

@@ -14,5 +14,6 @@
 @property (strong,nonatomic) SingletonArticulos *singleArticulos;
 @property (strong, nonatomic) IBOutlet UISwitch *switchInternet;
 - (IBAction)conectar:(id)sender;
+- (IBAction)backButton:(id)sender;
 
 @end
