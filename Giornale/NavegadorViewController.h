@@ -13,6 +13,7 @@
 @interface NavegadorViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIWebView *vistaWeb;
 @property (strong, nonatomic) UIActivityViewController *activityViewController;
+@property (strong, nonatomic) UIActivityIndicatorView *loading;
 - (IBAction)irWikipedia:(id)sender;
 - (IBAction)guardarArticulo:(id)sender;
 - (IBAction)compartirFacebook:(id)sender;

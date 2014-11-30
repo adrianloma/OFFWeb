@@ -137,9 +137,25 @@
 
 
 - (void)viewDidLoad {
+    self.viewArticulo.delegate = self;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setDetallesArticulo];
+    self.loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.loading.frame = CGRectMake(0, 0, 40, 40);
+    self.loading.center = self.view.center;
+    [self.view addSubview:self.loading];
+}
+
+-(void)webViewDidStartLoad:(UIWebView *)vistaWeb{
+    
+    [self.loading startAnimating];
+    
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)vistaWeb{
+    
+    [self.loading stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning {

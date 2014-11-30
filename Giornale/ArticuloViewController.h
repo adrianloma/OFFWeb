@@ -14,6 +14,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *urlArticulo;
 - (IBAction)irArticuloWeb:(id)sender;
 @property (strong, nonatomic) IBOutlet UIWebView *viewArticulo;
+@property (strong, nonatomic) UIActivityIndicatorView *loading;
+
+
 
 @property (strong, nonatomic) NSDictionary *artRec;
 - (void)setArtRec:(NSDictionary*)artRec conexion:(bool)internet;
