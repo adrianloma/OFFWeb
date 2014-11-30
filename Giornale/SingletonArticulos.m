@@ -32,6 +32,7 @@
 -(void) agregarArticulo:(NSDictionary *)articulo{
     [self.articulos insertObject:articulo atIndex:posArtAct];
     posArtAct++;
+
 }
 
 +(SingletonArticulos *) getSharedInstance{

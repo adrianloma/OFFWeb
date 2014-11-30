@@ -20,6 +20,7 @@
 		326C20FD1A142A9800505A1E /* NavegadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 326C20FC1A142A9800505A1E /* NavegadorViewController.m */; };
 		326C21001A14412500505A1E /* SingletonArticulos.m in Sources */ = {isa = PBXBuildFile; fileRef = 326C20FF1A14412500505A1E /* SingletonArticulos.m */; };
 		32B81ABC1A1D52460042D327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B81ABB1A1D52460042D327 /* Main.storyboard */; };
+		3A2E2A391A2BBDAB00FEEAF5 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		326C20FE1A14412500505A1E /* SingletonArticulos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonArticulos.h; sourceTree = "<group>"; };
 		326C20FF1A14412500505A1E /* SingletonArticulos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonArticulos.m; sourceTree = "<group>"; };
 		32B81ABB1A1D52460042D327 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3A2E2A371A2BBDAB00FEEAF5 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				324CF5B01A1BC866004E7823 /* twitter.png */,
 				324CF5B11A1BC866004E7823 /* facebook.png */,
 				32B81ABB1A1D52460042D327 /* Main.storyboard */,
+				3A2E2A371A2BBDAB00FEEAF5 /* VideoViewController.h */,
+				3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */,
 				326C20FC1A142A9800505A1E /* NavegadorViewController.m */,
 				326C20FE1A14412500505A1E /* SingletonArticulos.h */,
 				326C20FF1A14412500505A1E /* SingletonArticulos.m */,
@@ -253,6 +258,7 @@
 				326C20FD1A142A9800505A1E /* NavegadorViewController.m in Sources */,
 				3230B7721A13F21B008D85D6 /* main.m in Sources */,
 				326C20F71A14095100505A1E /* TablaArticulosTableViewController.m in Sources */,
+				3A2E2A391A2BBDAB00FEEAF5 /* VideoViewController.m in Sources */,
 				326C20FA1A140BD700505A1E /* Articulo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
