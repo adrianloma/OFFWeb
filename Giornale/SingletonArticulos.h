@@ -11,8 +11,10 @@
 @interface SingletonArticulos : NSObject
 
 @property (nonatomic, strong) NSMutableArray *articulos;
+@property (nonatomic, strong) NSMutableArray *archivados;
 
 -(void) agregarArticulo:(NSDictionary *)articulo;
+-(void) borrarArticulo:(NSInteger) pos;
 //-(void) crearPlista;
 -(void) initArticulos;
 -(NSMutableArray *) getArticulos;

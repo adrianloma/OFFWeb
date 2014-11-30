@@ -34,6 +34,10 @@
     posArtAct++;
 }
 
+-(void) borrarArticulo:(NSInteger) pos{
+    [self.articulos removeObjectAtIndex:pos];
+}
+
 +(SingletonArticulos *) getSharedInstance{
     static SingletonArticulos *_sharedInstance;
     static dispatch_once_t oncePredicate;
@@ -48,6 +52,11 @@
 -(NSMutableArray *) getArticulos{
     return self.articulos;
 }
+
+-(NSMutableArray *) getArchivados{
+    return self.archivados;
+}
+
 
 
 
