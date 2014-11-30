@@ -245,16 +245,6 @@
                                     <constraint firstAttribute="width" constant="264" id="4Zf-ZZ-uJB"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufI-L9-pYM">
-                                <rect key="frame" x="93" y="199" width="141" height="39"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Go to articles">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="modal" id="oll-J8-ZPr"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbT-gr-akM">
                                 <rect key="frame" x="114" y="269" width="99" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -263,6 +253,16 @@
                                 </state>
                                 <connections>
                                     <segue destination="Nu2-88-2PL" kind="modal" id="T9B-Jb-THx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufI-L9-pYM">
+                                <rect key="frame" x="93" y="199" width="141" height="39"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Go to articles">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="modal" id="oll-J8-ZPr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -297,12 +297,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-bY-4LU">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-bY-4LU">
                                 <rect key="frame" x="0.0" y="56" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-Kk-Nkh">
-                                <rect key="frame" x="16" y="8" width="70" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-Kk-Nkh">
+                                <rect key="frame" x="16" y="8" width="43" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -312,11 +312,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfr-bY-4LU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FgF-Kk-Nkh" secondAttribute="bottom" constant="8" id="4Ux-cK-4UZ"/>
                             <constraint firstItem="wfr-bY-4LU" firstAttribute="leading" secondItem="uhr-uS-lCK" secondAttribute="leading" id="AWx-UE-YcV"/>
-                            <constraint firstItem="wfr-bY-4LU" firstAttribute="top" secondItem="uhr-uS-lCK" secondAttribute="top" constant="75" id="iQy-Mb-ggD"/>
+                            <constraint firstItem="FgF-Kk-Nkh" firstAttribute="top" secondItem="uhr-uS-lCK" secondAttribute="top" constant="8" id="Sgh-TD-vXC"/>
+                            <constraint firstItem="wfr-bY-4LU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uhr-uS-lCK" secondAttribute="top" constant="54" id="iQy-Mb-ggD"/>
                             <constraint firstAttribute="trailing" secondItem="wfr-bY-4LU" secondAttribute="trailing" id="mfd-At-o6N"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wfr-bY-4LU" secondAttribute="bottom" constant="10" id="soR-ko-QF8"/>
+                            <constraint firstItem="FgF-Kk-Nkh" firstAttribute="leading" secondItem="uhr-uS-lCK" secondAttribute="leading" constant="16" id="n1g-hY-o4e"/>
+                            <constraint firstAttribute="bottom" secondItem="wfr-bY-4LU" secondAttribute="bottom" constant="10" id="soR-ko-QF8"/>
+                            <constraint firstItem="wfr-bY-4LU" firstAttribute="top" secondItem="uhr-uS-lCK" secondAttribute="top" constant="56" id="tfA-QB-bwS"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="iQy-Mb-ggD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="6OO-2u-T4U"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

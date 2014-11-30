@@ -160,4 +160,54 @@
 - (IBAction)irArticuloWeb:(id)sender {
     
 }
+
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+#pragma mark - Connectivity
+
+typedef void(^connection)(BOOL);
+
+- (void)checkInternet:(connection)block
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.google.com/"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"HEAD";
+    request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
+    request.timeoutInterval = 10.0;
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:
+     ^(NSURLResponse *response, NSData *data, NSError *connectionError)
+     {
+         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+         block([(NSHTTPURLResponse *)response statusCode] == 200);
+     }];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    //check if shake gesture was invoked
+    if (UIEventSubtypeMotionShake) {
+        //check if user has internet
+        [self checkInternet:^(BOOL internet)
+         {
+             if (internet)
+             {
+                 NSLog(@"Internet is working");
+                 // "Internet" aka Google
+             }
+             else
+             {
+                 NSLog(@"Internet is NOT working");
+                 // No "Internet" aka no Google
+             }
+         }];
+    }
+}
+
 @end
