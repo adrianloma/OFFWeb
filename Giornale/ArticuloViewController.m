@@ -36,7 +36,6 @@
         
             int veces;
             bool sw;
-            NSString *textEnMedio;
             NSString *contenido;
         
             contenido=[_artRec objectForKey:@"contenido"];

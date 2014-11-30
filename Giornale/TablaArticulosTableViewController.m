@@ -11,6 +11,7 @@
 
 @interface TablaArticulosTableViewController (){
     NSMutableArray *articulos;
+    int actual;
 }
 
 @end
@@ -64,12 +65,27 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    UISwipeGestureRecognizer *g = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(cellWasSwiped:)];
+    [cell addGestureRecognizer:g];
+    //[g release];
+    
     //NSDate *object = self.objects[indexPath.row];
     cell.textLabel.text = [object objectForKey:@"titulo"];
     cell.detailTextLabel.text = [object objectForKey:@"url"];
-    
-    
     return cell;
+}
+
+- (void)cellWasSwiped:(UIGestureRecognizer *)g {
+    //NSLog(@"Swiped");
+    
+    CGPoint location = [g locationInView:self.tableView];
+    NSIndexPath *swipedIndexPath = [self.tableView indexPathForRowAtPoint:location];
+    UITableViewCell *swipedCell  = [self.tableView cellForRowAtIndexPath:swipedIndexPath];
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat: @"Row: %d",swipedIndexPath.row]  message:@"Your articles will be opened using internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+    [self.singleArticulos borrarArticulo:swipedIndexPath.row];
+    [self.tableView reloadData];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
