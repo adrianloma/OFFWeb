@@ -21,6 +21,7 @@
 		326C21001A14412500505A1E /* SingletonArticulos.m in Sources */ = {isa = PBXBuildFile; fileRef = 326C20FF1A14412500505A1E /* SingletonArticulos.m */; };
 		32B81ABC1A1D52460042D327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B81ABB1A1D52460042D327 /* Main.storyboard */; };
 		3A2E2A391A2BBDAB00FEEAF5 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */; };
+		3A2E2A3B1A2BD2DF00FEEAF5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E2A3A1A2BD2DF00FEEAF5 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		32B81ABB1A1D52460042D327 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3A2E2A371A2BBDAB00FEEAF5 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		3A2E2A3A1A2BD2DF00FEEAF5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				324CF5B01A1BC866004E7823 /* twitter.png */,
 				324CF5B11A1BC866004E7823 /* facebook.png */,
 				32B81ABB1A1D52460042D327 /* Main.storyboard */,
+				3A2E2A3A1A2BD2DF00FEEAF5 /* logo.png */,
 				3A2E2A371A2BBDAB00FEEAF5 /* VideoViewController.h */,
 				3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */,
 				326C20FC1A142A9800505A1E /* NavegadorViewController.m */,
@@ -232,6 +235,7 @@
 			files = (
 				324CF5B21A1BC866004E7823 /* twitter.png in Resources */,
 				32B81ABC1A1D52460042D327 /* Main.storyboard in Resources */,
+				3A2E2A3B1A2BD2DF00FEEAF5 /* logo.png in Resources */,
 				324CF5B31A1BC866004E7823 /* facebook.png in Resources */,
 				3230B7831A13F21B008D85D6 /* LaunchScreen.xib in Resources */,
 				3230B7801A13F21B008D85D6 /* Images.xcassets in Resources */,

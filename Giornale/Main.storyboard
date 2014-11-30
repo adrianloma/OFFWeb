@@ -106,6 +106,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Saved" id="QIr-CI-gi6">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="2U9-KB-zm0">
+                            <connections>
+                                <action selector="backButton:" destination="BSh-kj-v0i" id="YRm-bt-6fe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Internet" style="plain" id="x8k-zp-OPE">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="6Y3-De-0KZ">
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
@@ -198,7 +203,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="H43-aw-cQO">
-                        <barButtonItem key="rightBarButtonItem" title="Guardar" id="woZ-o9-wRs">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="mM5-e3-BSa">
+                            <connections>
+                                <action selector="backButton:" destination="hoi-nQ-Fzh" id="jYj-K2-YkD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="woZ-o9-wRs">
                             <connections>
                                 <action selector="guardarArticulo:" destination="hoi-nQ-Fzh" id="FjT-2C-t0x"/>
                             </connections>
@@ -225,11 +235,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yf8-IP-xdQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="yf8-IP-xdQ">
                                 <rect key="frame" x="28" y="20" width="264" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="1ym-zs-MfA"/>
+                                    <constraint firstAttribute="width" constant="264" id="4Zf-ZZ-uJB"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbT-gr-akM">
-                                <rect key="frame" x="135" y="307" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufI-L9-pYM">
+                                <rect key="frame" x="93" y="199" width="141" height="39"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Go to articles">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="modal" id="oll-J8-ZPr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbT-gr-akM">
+                                <rect key="frame" x="114" y="269" width="99" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Tutorial">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -237,17 +262,19 @@
                                     <segue destination="Nu2-88-2PL" kind="modal" id="T9B-Jb-THx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufI-L9-pYM">
-                                <rect key="frame" x="96" y="239" width="128" height="30"/>
-                                <state key="normal" title="Entrar a aplicacion">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="modal" id="oll-J8-ZPr"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wbT-gr-akM" firstAttribute="leading" secondItem="00Q-EK-01k" secondAttribute="leading" constant="114" id="29R-Zs-Zp7"/>
+                            <constraint firstItem="ufI-L9-pYM" firstAttribute="leading" secondItem="00Q-EK-01k" secondAttribute="leading" constant="93" id="F9d-ZL-IhZ"/>
+                            <constraint firstItem="yf8-IP-xdQ" firstAttribute="top" secondItem="00Q-EK-01k" secondAttribute="top" constant="20" id="P4H-rC-7xC"/>
+                            <constraint firstAttribute="trailing" secondItem="wbT-gr-akM" secondAttribute="trailing" constant="107" id="Q9H-2W-Yl4"/>
+                            <constraint firstItem="wbT-gr-akM" firstAttribute="top" secondItem="ufI-L9-pYM" secondAttribute="bottom" constant="31" id="ago-6v-lcZ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yf8-IP-xdQ" secondAttribute="trailing" constant="28" id="d25-rh-8mI"/>
+                            <constraint firstAttribute="trailing" secondItem="ufI-L9-pYM" secondAttribute="trailing" constant="86" id="ehW-sy-IbZ"/>
+                            <constraint firstItem="ufI-L9-pYM" firstAttribute="top" secondItem="yf8-IP-xdQ" secondAttribute="bottom" constant="55" id="ige-XM-QKP"/>
+                            <constraint firstItem="yf8-IP-xdQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="00Q-EK-01k" secondAttribute="leading" constant="28" id="zhl-IX-WPr"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
@@ -342,6 +369,7 @@
     <resources>
         <image name="facebook.png" width="256" height="256"/>
         <image name="first" width="30" height="30"/>
+        <image name="logo.png" width="984" height="308"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

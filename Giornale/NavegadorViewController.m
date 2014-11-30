@@ -96,4 +96,7 @@
     [self presentViewController:self.activityViewController animated:YES completion:nil];
     
 }
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
