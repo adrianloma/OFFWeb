@@ -15,6 +15,7 @@
 - (IBAction)irArticuloWeb:(id)sender;
 @property (strong, nonatomic) IBOutlet UIWebView *viewArticulo;
 @property (strong, nonatomic) UIActivityIndicatorView *loading;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *orientacionBtn;
 
 
 
