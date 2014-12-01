@@ -102,24 +102,15 @@
 		3230B76E1A13F21B008D85D6 /* Giornale */ = {
 			isa = PBXGroup;
 			children = (
-				3230B7731A13F21B008D85D6 /* AppDelegate.h */,
-				326C20F21A14089200505A1E /* ArticuloViewController.h */,
-				326C20F31A14089200505A1E /* ArticuloViewController.m */,
-				3230B7741A13F21B008D85D6 /* AppDelegate.m */,
-				324CF5B01A1BC866004E7823 /* twitter.png */,
-				324CF5B11A1BC866004E7823 /* facebook.png */,
+				3A2E2A411A2BE6D000FEEAF5 /* AppDelegate */,
+				3A2E2A401A2BE6C500FEEAF5 /* ArticulosViewController */,
+				3A2E2A431A2BE6E900FEEAF5 /* Assets */,
 				32B81ABB1A1D52460042D327 /* Main.storyboard */,
-				326C20FB1A142A9800505A1E /* NavegadorViewController.h */,
-				3A2E2A3A1A2BD2DF00FEEAF5 /* logo.png */,
-				3A2E2A371A2BBDAB00FEEAF5 /* VideoViewController.h */,
-				3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */,
-				326C20FC1A142A9800505A1E /* NavegadorViewController.m */,
-				326C20FE1A14412500505A1E /* SingletonArticulos.h */,
-				326C20FF1A14412500505A1E /* SingletonArticulos.m */,
-				326C20F81A140BD700505A1E /* Articulo.h */,
-				326C20F91A140BD700505A1E /* Articulo.m */,
-				326C20F51A14095100505A1E /* TablaArticulosTableViewController.h */,
-				326C20F61A14095100505A1E /* TablaArticulosTableViewController.m */,
+				3A2E2A421A2BE6DD00FEEAF5 /* NavegadorViewController */,
+				3A2E2A3C1A2BE69700FEEAF5 /* VideoViewController */,
+				3A2E2A3F1A2BE6B900FEEAF5 /* SingletonArticulos */,
+				3A2E2A3D1A2BE6A300FEEAF5 /* Articulo */,
+				3A2E2A3E1A2BE6A900FEEAF5 /* TablaArticulosTableViewController */,
 				3230B77F1A13F21B008D85D6 /* Images.xcassets */,
 				3230B7811A13F21B008D85D6 /* LaunchScreen.xib */,
 				3230B76F1A13F21B008D85D6 /* Supporting Files */,
@@ -151,6 +142,79 @@
 				3230B78D1A13F21B008D85D6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A2E2A3C1A2BE69700FEEAF5 /* VideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E2A371A2BBDAB00FEEAF5 /* VideoViewController.h */,
+				3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */,
+			);
+			name = VideoViewController;
+			sourceTree = "<group>";
+		};
+		3A2E2A3D1A2BE6A300FEEAF5 /* Articulo */ = {
+			isa = PBXGroup;
+			children = (
+				326C20F81A140BD700505A1E /* Articulo.h */,
+				326C20F91A140BD700505A1E /* Articulo.m */,
+			);
+			name = Articulo;
+			sourceTree = "<group>";
+		};
+		3A2E2A3E1A2BE6A900FEEAF5 /* TablaArticulosTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				326C20F51A14095100505A1E /* TablaArticulosTableViewController.h */,
+				326C20F61A14095100505A1E /* TablaArticulosTableViewController.m */,
+			);
+			name = TablaArticulosTableViewController;
+			sourceTree = "<group>";
+		};
+		3A2E2A3F1A2BE6B900FEEAF5 /* SingletonArticulos */ = {
+			isa = PBXGroup;
+			children = (
+				326C20FE1A14412500505A1E /* SingletonArticulos.h */,
+				326C20FF1A14412500505A1E /* SingletonArticulos.m */,
+			);
+			name = SingletonArticulos;
+			sourceTree = "<group>";
+		};
+		3A2E2A401A2BE6C500FEEAF5 /* ArticulosViewController */ = {
+			isa = PBXGroup;
+			children = (
+				326C20F21A14089200505A1E /* ArticuloViewController.h */,
+				326C20F31A14089200505A1E /* ArticuloViewController.m */,
+			);
+			name = ArticulosViewController;
+			sourceTree = "<group>";
+		};
+		3A2E2A411A2BE6D000FEEAF5 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3230B7731A13F21B008D85D6 /* AppDelegate.h */,
+				3230B7741A13F21B008D85D6 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3A2E2A421A2BE6DD00FEEAF5 /* NavegadorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				326C20FB1A142A9800505A1E /* NavegadorViewController.h */,
+				326C20FC1A142A9800505A1E /* NavegadorViewController.m */,
+			);
+			name = NavegadorViewController;
+			sourceTree = "<group>";
+		};
+		3A2E2A431A2BE6E900FEEAF5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				324CF5B01A1BC866004E7823 /* twitter.png */,
+				324CF5B11A1BC866004E7823 /* facebook.png */,
+				3A2E2A3A1A2BD2DF00FEEAF5 /* logo.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
