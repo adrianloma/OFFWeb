@@ -22,7 +22,7 @@
         _artRec = artRec;
         conexion = internet;
         // Update the view.
-        [self setDetallesArticulo];
+        //[self setDetallesArticulo];
     }
 }
 
@@ -125,6 +125,7 @@
             
             [self.viewArticulo loadHTMLString:contenido baseURL:nil];
             
+            
             //NSLog(contenido);
             
         } else {
@@ -140,7 +141,31 @@
     self.viewArticulo.delegate = self;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setDetallesArticulo];
+    
+    if(conexion){
+        
+        //ESTA FUNCION checkInternet SE LLAMA ASINCRONICAMENTE
+        [self checkInternet:^(BOOL isConnected)
+         {
+             if (!isConnected)
+             {
+                 //alerta
+                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No internet connection!" message:@"It seems you don't have an internet connection! The offline version of this article will be displayed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                 [alertView show];
+                 //
+                 conexion = false;
+             }
+             
+             [self setDetallesArticulo];
+         }];
+        
+        //end funcion asincronica
+    } else{
+        [self setDetallesArticulo];
+    }
+    
+    
+    
     self.loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.loading.frame = CGRectMake(0, 0, 40, 40);
     self.loading.center = self.view.center;
@@ -208,22 +233,42 @@ typedef void(^connection)(BOOL);
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     //check if shake gesture was invoked
-    if (UIEventSubtypeMotionShake) {
+    if (UIEventSubtypeMotionShake && !conexion) {
         //check if user has internet
-        [self checkInternet:^(BOOL internet)
+        [self checkInternet:^(BOOL isConnected)
          {
-             if (internet)
+             if (isConnected)
              {
                  NSLog(@"Internet is working");
-                 // "Internet" aka Google
+                 UIAlertView *alert = [[UIAlertView alloc]
+                                       initWithTitle:@"Internet connection found!"
+                                       message:@"Do you want to view the online version?"
+                                       delegate:self  // set nil if you don't want the yes button callback
+                                       cancelButtonTitle:@"No"
+                                       otherButtonTitles:@"Yes", nil];
+                 [alert show];
              }
              else
              {
+                 //alert
                  NSLog(@"Internet is NOT working");
-                 // No "Internet" aka no Google
              }
          }];
     }
 }
+
+
+
+// yes button callback
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:
+(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        conexion = true;
+        //alert
+        [self setDetallesArticulo];
+    }
+}
+
+
 
 @end

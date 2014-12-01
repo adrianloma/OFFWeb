@@ -9,7 +9,7 @@
 #import "NavegadorViewController.h"
 
 @interface NavegadorViewController (){
-    NSMutableArray *articulos;
+   // NSMutableArray *articulos;
 }
 
 @end
@@ -19,9 +19,10 @@
 - (void)viewDidLoad {
     self.vistaWeb.delegate = self;
     self.singleArticulos = [SingletonArticulos getSharedInstance];
-    articulos = [self.singleArticulos getArticulos];
+    //articulos = [self.singleArticulos getArticulos];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self reloadPage];
     self.loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.loading.frame = CGRectMake(0, 0, 40, 40);
     self.loading.center = self.view.center;
@@ -45,11 +46,30 @@
 
 - (IBAction)irWikipedia:(id)sender {
     
-    NSString *fullURL = @"http://www.wikipedia.com";
-    
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.vistaWeb loadRequest:request];
+    [self reloadPage];
+
+}
+
+- (void) reloadPage{
+    [self checkInternet:^(BOOL isConnected)
+     {
+         if (isConnected)
+         {
+             NSString *fullURL = @"http://en.wikipedia.com";
+             
+             NSURL *url = [NSURL URLWithString:fullURL];
+             NSURLRequest *request = [NSURLRequest requestWithURL:url];
+             [self.vistaWeb loadRequest:request];
+             
+         }
+         else
+         {
+             //alert
+             [self.vistaWeb loadHTMLString:@"<html>	<h1>Uh-oh! No internet conection detected<br>   x_x</h1></html>" baseURL:nil];
+             NSLog(@"Internet is NOT working");
+             // No "Internet" aka no Google
+         }
+     }];
     
 }
 
@@ -114,5 +134,27 @@
 }
 - (IBAction)backButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+typedef void(^connection)(BOOL);
+
+- (void)checkInternet:(connection)block
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.google.com/"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"HEAD";
+    request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
+    request.timeoutInterval = 10.0;
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:
+     ^(NSURLResponse *response, NSData *data, NSError *connectionError)
+     {
+         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+         block([(NSHTTPURLResponse *)response statusCode] == 200);
+     }];
 }
 @end
