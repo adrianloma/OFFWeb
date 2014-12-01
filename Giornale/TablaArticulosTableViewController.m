@@ -82,8 +82,8 @@
     NSIndexPath *swipedIndexPath = [self.tableView indexPathForRowAtPoint:location];
     UITableViewCell *swipedCell  = [self.tableView cellForRowAtIndexPath:swipedIndexPath];
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat: @"Row: %d",swipedIndexPath.row]  message:@"Your articles will be opened using internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat: @"Row: %d",swipedIndexPath.row]  message:@"Your articles will be opened using internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    [alertView show];
     [self.singleArticulos borrarArticulo:swipedIndexPath.row];
     [self.tableView reloadData];
 }

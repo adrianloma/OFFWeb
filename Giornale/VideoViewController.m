@@ -28,12 +28,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     [self loadVideo];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(cambiaOrientacion:)
+                                                 name:@"UIDeviceOrientationDidChangeNotification"
+                                               object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)cambiaOrientacion:(NSNotification *)notification {
+    
+    
+    UIDeviceOrientation orientation;
+    
+    //identifica la orientación en la que está el dispositivo
+    orientation = [[UIDevice currentDevice] orientation];
+    
+    switch (orientation) {
+        case UIDeviceOrientationFaceUp:
+        case UIDeviceOrientationFaceDown:
+        case UIDeviceOrientationPortrait:
+        case UIDeviceOrientationPortraitUpsideDown:
+        case UIDeviceOrientationLandscapeLeft:
+        case UIDeviceOrientationLandscapeRight:
+        default:
+            [self loadVideo];
+            break;
+    }
 }
 
 /*

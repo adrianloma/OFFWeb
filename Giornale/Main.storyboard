@@ -53,7 +53,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="it9-8j-ABb">
-                        <barButtonItem key="rightBarButtonItem" title=" " id="pPz-lr-4VZ"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title=" asdasda" id="pPz-lr-4VZ">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -300,7 +302,7 @@
                         <subviews>
                             <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-bY-4LU">
                                 <rect key="frame" x="0.0" y="56" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-Kk-Nkh">
                                 <rect key="frame" x="16" y="8" width="43" height="33"/>
