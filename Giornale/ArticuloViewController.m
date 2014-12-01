@@ -140,6 +140,10 @@
 - (void)viewDidLoad {
     self.viewArticulo.delegate = self;
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(cambiaOrientacion:)
+                                                 name:@"UIDeviceOrientationDidChangeNotification"
+                                               object:nil];
     // Do any additional setup after loading the view.
     
     if(conexion){
@@ -171,6 +175,41 @@
     self.loading.center = self.view.center;
     [self.view addSubview:self.loading];
 }
+
+- (void)cambiaOrientacion:(NSNotification *)notification {
+    
+    
+    UIDeviceOrientation orientation;
+    
+    //identifica la orientación en la que está el dispositivo
+    orientation = [[UIDevice currentDevice] orientation];
+    
+    switch (orientation) {
+        case UIDeviceOrientationFaceUp:
+            [self.orientacionBtn setTitle:@"Face Up" ];
+            break;
+        case UIDeviceOrientationFaceDown:
+            [self.orientacionBtn setTitle:@"Face Down"];
+            break;
+        case UIDeviceOrientationPortrait:
+            [self.orientacionBtn setTitle:@"Portrait Mode"];
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:
+            [self.orientacionBtn setTitle:@"Portrait Mode"];
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            [self.orientacionBtn setTitle:@"Landscape Mode"];
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            [self.orientacionBtn setTitle:@"Landscape Mode"];
+            break;
+        default:
+            [self.orientacionBtn setTitle:@""];
+            break;
+    }
+}
+
+
 
 -(void)webViewDidStartLoad:(UIWebView *)vistaWeb{
     
