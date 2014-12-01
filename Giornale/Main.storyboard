@@ -54,7 +54,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="it9-8j-ABb">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title=" asdasda" id="pPz-lr-4VZ">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title=" Giornale" id="pPz-lr-4VZ">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
