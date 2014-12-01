@@ -58,6 +58,21 @@
 
 -(void) borrarArticulo:(NSInteger) pos{
     [_articulos removeObjectAtIndex:pos];
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Articulo" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSMutableArray *objects = [[NSMutableArray alloc] initWithArray:[context executeFetchRequest:request error:&error]];
+    
+    [context deleteObject:objects[pos]];
+    
+    error = nil;
+    if(![context save:&error]){
+        NSLog(@"Unresolved log %@, %@", error, [error userInfo]);
+    }
+    
 }
 
 +(SingletonArticulos *) getSharedInstance{
