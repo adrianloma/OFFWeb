@@ -22,11 +22,12 @@
     //articulos = [self.singleArticulos getArticulos];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self reloadPage];
+
     self.loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.loading.frame = CGRectMake(0, 0, 40, 40);
     self.loading.center = self.view.center;
     [self.view addSubview:self.loading];
+    [self reloadPage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,7 +91,12 @@
         NSURL *urlRequest = [NSURL URLWithString:url];
         
         NSString *html = [NSString stringWithContentsOfURL:urlRequest encoding:NSUTF8StringEncoding error:nil];
-        //NSLog(html);
+        NSLog(html);
+        
+        if (!html){
+            html = [[NSString alloc] initWithFormat:
+                    @"<html><h1>Error en documento. Favor de revisar el articulo en linea.</h1></br>:'(</html>"];
+        }
         
         NSDictionary *artPorAgregar = [NSDictionary dictionaryWithObjectsAndKeys:
                                        titulo,@"titulo",

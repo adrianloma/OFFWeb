@@ -22,6 +22,7 @@
 		32B81ABC1A1D52460042D327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B81ABB1A1D52460042D327 /* Main.storyboard */; };
 		3A2E2A391A2BBDAB00FEEAF5 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */; };
 		3A2E2A3B1A2BD2DF00FEEAF5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E2A3A1A2BD2DF00FEEAF5 /* logo.png */; };
+		3A2E2A461A2C0C5200FEEAF5 /* Articulos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2A441A2C0C5200FEEAF5 /* Articulos.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		3A2E2A371A2BBDAB00FEEAF5 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		3A2E2A381A2BBDAB00FEEAF5 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		3A2E2A3A1A2BD2DF00FEEAF5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		3A2E2A451A2C0C5200FEEAF5 /* Articulos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Articulos.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				326C20FE1A14412500505A1E /* SingletonArticulos.h */,
+				3A2E2A441A2C0C5200FEEAF5 /* Articulos.xcdatamodeld */,
 				326C20FF1A14412500505A1E /* SingletonArticulos.m */,
 			);
 			name = SingletonArticulos;
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				326C20F41A14089200505A1E /* ArticuloViewController.m in Sources */,
+				3A2E2A461A2C0C5200FEEAF5 /* Articulos.xcdatamodeld in Sources */,
 				3230B7751A13F21B008D85D6 /* AppDelegate.m in Sources */,
 				326C21001A14412500505A1E /* SingletonArticulos.m in Sources */,
 				326C20FD1A142A9800505A1E /* NavegadorViewController.m in Sources */,
@@ -522,6 +526,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A2E2A441A2C0C5200FEEAF5 /* Articulos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A2E2A451A2C0C5200FEEAF5 /* Articulos.xcdatamodel */,
+			);
+			currentVersion = 3A2E2A451A2C0C5200FEEAF5 /* Articulos.xcdatamodel */;
+			path = Articulos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3230B7641A13F21A008D85D6 /* Project object */;
 }

@@ -10,55 +10,152 @@
 
 @implementation SingletonArticulos{
     int posArtAct;
+    NSMutableArray *_articulos;
 }
 
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
 -(void) initArticulos{
-    _articulos = [NSMutableArray arrayWithObjects:
-                 [NSDictionary dictionaryWithObjectsAndKeys:
-                  @"Articulo 1",@"titulo",
-                  @"www.wikipedia.com",@"url",
-                  @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula in elit id scelerisque. Fusce consequat bibendum enim sit amet finibus. Aliquam non diam mauris. Donec turpis lorem, bibendum at consectetur at, accumsan quis turpis. Fusce nec mollis sapien. Ut dapibus euismod vulputate. Duis non felis at purus mollis sollicitudin laoreet at velit. Mauris a congue dui. Maecenas vestibulum convallis nisl, quis molestie metus. Integer aliquet sed metus non tincidunt. Integer mauris urna, lacinia nec hendrerit eget, placerat non sem. Cras posuere, arcu ut molestie imperdiet, tortor nunc venenatis urna, ut efficitur augue diam efficitur mi. Quisque sed consequat mi. Quisque pretium accumsan pretium. Vivamus sem augue, iaculis vel egestas quis, tristique ut leo. Suspendisse rutrum nisl vitae volutpat bibendum. Aenean sed felis vel eros congue tristique. Curabitur ut suscipit mauris, et semper tellus. Sed ac scelerisque arcu. Morbi et erat tellus. Phasellus sodales sem mauris, ut iaculis mi vehicula id. Curabitur sit amet nisi dictum, blandit mauris sed, volutpat odio. Nulla facilisi. Sed iaculis pretium rhoncus. Pellentesque luctus quis ipsum in porta.",@"contenido",
-                  nil],
-                 [NSDictionary dictionaryWithObjectsAndKeys:
-                  @"Articulo 2",@"titulo",
-                  @"www.mashable.com",@"url",
-                  @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula in elit id scelerisque. Fusce consequat bibendum enim sit amet finibus. Aliquam non diam mauris. Donec turpis lorem, bibendum at consectetur at, accumsan quis turpis. Fusce nec mollis sapien. Ut dapibus euismod vulputate. Duis non felis at purus mollis sollicitudin laoreet at velit. Mauris a congue dui. Maecenas vestibulum convallis nisl, quis molestie metus. Integer aliquet sed metus non tincidunt. Integer mauris urna, lacinia nec hendrerit eget, placerat non sem. Cras posuere, arcu ut molestie imperdiet, tortor nunc venenatis urna, ut efficitur augue diam efficitur mi. Quisque sed consequat mi. Quisque pretium accumsan pretium. Vivamus sem augue, iaculis vel egestas quis, tristique ut leo. Suspendisse rutrum nisl vitae volutpat bibendum. Aenean sed felis vel eros congue tristique. Curabitur ut suscipit mauris, et semper tellus. Sed ac scelerisque arcu. Morbi et erat tellus. Phasellus sodales sem mauris, ut iaculis mi vehicula id. Curabitur sit amet nisi dictum, blandit mauris sed, volutpat odio. Nulla facilisi. Sed iaculis pretium rhoncus. Pellentesque luctus quis ipsum in porta.",@"contenido",
-                  nil],
-                 nil];
-    posArtAct=2;
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Articulo" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSMutableArray *objects = [[NSMutableArray alloc] initWithArray:[context executeFetchRequest:request error:&error]];
+    
+    _articulos = [[NSMutableArray alloc] init];
+    
+
+
+    
+    
+    NSArray *keys = [[NSArray alloc] initWithObjects:@"titulo", @"url", @"contenido", nil];
+    for (int i = 0; i < objects.count; i++) {
+        [_articulos addObject:[objects[i] dictionaryWithValuesForKeys:keys]];
+        
+    }
+    
 
 }
 
 -(void) agregarArticulo:(NSDictionary *)articulo{
-    [self.articulos insertObject:articulo atIndex:posArtAct];
-    posArtAct++;
+    [_articulos addObject:articulo];
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSManagedObjectContext *newManagementObject = [NSEntityDescription insertNewObjectForEntityForName:@"Articulo" inManagedObjectContext:context];
+    
+    [newManagementObject setValuesForKeysWithDictionary:articulo];
+    
+    
+    NSError *error = nil;
+    if(![context save:&error]){
+        NSLog(@"Unresolved log %@, %@", error, [error userInfo]);
+    }
 
 }
 
 -(void) borrarArticulo:(NSInteger) pos{
-    [self.articulos removeObjectAtIndex:pos];
+    [_articulos removeObjectAtIndex:pos];
 }
 
 +(SingletonArticulos *) getSharedInstance{
     static SingletonArticulos *_sharedInstance;
     static dispatch_once_t oncePredicate;
     
-    dispatch_once(&oncePredicate, ^{_sharedInstance = [[SingletonArticulos alloc] init];
+    dispatch_once(&oncePredicate, ^{_sharedInstance = [[SingletonArticulos alloc] init]; [_sharedInstance initArticulos];
     });
     
-    [_sharedInstance initArticulos];
+    
     return _sharedInstance;
 }
 
 -(NSMutableArray *) getArticulos{
-    return self.articulos;
-}
-
--(NSMutableArray *) getArchivados{
-    return self.archivados;
+    return _articulos;
 }
 
 
+
+
+
+
+
+#pragma mark - Model
+
+- (NSURL *)applicationDocumentsDirectory {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "mx.itesm._190757_Laboratotio_Core_Data" in the application's documents directory.
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (NSManagedObjectModel *)managedObjectModel {
+    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Articulos" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it.
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
+    }
+    
+    // Create the coordinator and store
+    
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Articulos.sqlite"];
+    NSError *error = nil;
+    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+        // Report any error we got.
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
+        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
+        dict[NSUnderlyingErrorKey] = error;
+        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+        // Replace this with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _persistentStoreCoordinator;
+}
+
+
+- (NSManagedObjectContext *)managedObjectContext {
+    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator) {
+        return nil;
+    }
+    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    return _managedObjectContext;
+}
+
+#pragma mark - Core Data Saving support
+
+- (void)saveContext {
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        NSError *error = nil;
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
 
 
 @end

@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <CoreData/CoreData.h>
 @interface SingletonArticulos : NSObject
 
-@property (nonatomic, strong) NSMutableArray *articulos;
-@property (nonatomic, strong) NSMutableArray *archivados;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+
+//@property (nonatomic, strong) NSMutableArray *articulos;
 
 -(void) agregarArticulo:(NSDictionary *)articulo;
 -(void) borrarArticulo:(NSInteger) pos;

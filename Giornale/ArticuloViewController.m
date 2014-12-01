@@ -31,14 +31,14 @@
         
         self.tituloArticulo.text = [_artRec objectForKey:@"titulo"];
         [self.urlArticulo setTitle:[_artRec objectForKey:@"url"] forState:UIControlStateNormal];
+        NSString *contenido;
+        contenido=[_artRec objectForKey:@"contenido"];
         
         if (!conexion){
         
             int veces;
             bool sw;
-            NSString *contenido;
-        
-            contenido=[_artRec objectForKey:@"contenido"];
+
             
             //cambia saltos de linea por espacios
             contenido =[contenido stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"];
