@@ -62,6 +62,7 @@
              NSURLRequest *request = [NSURLRequest requestWithURL:url];
              [self.vistaWeb loadRequest:request];
              
+             
          }
          else
          {
@@ -78,7 +79,9 @@
     //NSLog(@"hola en guardar");
     NSString *urlOriginal = self.vistaWeb.request.URL.absoluteString;
     
-    if (urlOriginal.length > 31){
+    //NSLog(urlOriginal);
+    
+    if (urlOriginal.length > 31 && ![urlOriginal  isEqual:@"http://en.m.wikipedia.org/wiki/Main_Page"]){
     
         NSString *titulo = [urlOriginal substringFromIndex:31];
         titulo = [titulo capitalizedString]; //capitaliza titulo
