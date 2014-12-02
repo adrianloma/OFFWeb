@@ -22,6 +22,7 @@
 //-(void) crearPlista;
 -(void) initArticulos;
 -(NSMutableArray *) getArticulos;
+-(BOOL)isAlreadySavedWithURL:(NSString *) url;
 
 +(SingletonArticulos *) getSharedInstance;
 

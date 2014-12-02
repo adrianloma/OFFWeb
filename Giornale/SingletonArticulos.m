@@ -75,6 +75,27 @@
     
 }
 
+-(BOOL)isAlreadySavedWithURL:(NSString *) url{
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Articulo" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSPredicate *predicado = [NSPredicate predicateWithFormat:@"(url = %@)",url];
+    [request setPredicate:predicado];
+    
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    
+    if([objects count] == 0){
+        NSLog( @"No existen materias para cargar");
+        return  FALSE;
+    }else {
+        return TRUE;
+    }
+}
+
 +(SingletonArticulos *) getSharedInstance{
     static SingletonArticulos *_sharedInstance;
     static dispatch_once_t oncePredicate;
