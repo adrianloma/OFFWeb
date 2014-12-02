@@ -77,9 +77,9 @@
 - (IBAction)guardarArticulo:(id)sender {
     NSString *urlOriginal = self.vistaWeb.request.URL.absoluteString;
     
+    NSLog (urlOriginal);
     
-    if (urlOriginal.length > 31){
-    
+    if (urlOriginal.length > 31 && ![urlOriginal isEqual:@"http://en.m.wikipedia.org/wiki/Main_Page"]){
         //reformat url string
         NSString *titulo = [urlOriginal substringFromIndex:31];
         titulo = [titulo capitalizedString]; //capitaliza titulo
