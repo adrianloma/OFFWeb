@@ -86,9 +86,12 @@
         titulo = [titulo stringByReplacingOccurrencesOfString:@"_And_" withString:@"_and_"];
         titulo = [titulo stringByReplacingOccurrencesOfString:@"_Of_" withString:@"_of_"];
         titulo = [titulo stringByReplacingOccurrencesOfString:@"_The_" withString:@"_the_"];
+        titulo = [titulo stringByReplacingOccurrencesOfString:@"_Da_" withString:@"_da_"];
         NSString *url = [[NSString alloc] initWithFormat:@"http://en.wikipedia.org/w/index.php?title=%@&action=raw", titulo];
         titulo = [titulo stringByReplacingOccurrencesOfString:@"_" withString:@" "];
         NSURL *urlRequest = [NSURL URLWithString:url];
+        
+        NSLog(url);
         
         
         //check for duplicates
