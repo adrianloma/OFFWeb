@@ -9,6 +9,7 @@
 #import "NavegadorViewController.h"
 
 @interface NavegadorViewController (){
+    int esta;
    // NSMutableArray *articulos;
 }
 
@@ -75,6 +76,7 @@
 }
 
 - (IBAction)guardarArticulo:(id)sender {
+    esta=0;
     NSString *urlOriginal = self.vistaWeb.request.URL.absoluteString;
     
     NSLog (urlOriginal);
@@ -82,16 +84,16 @@
     if (urlOriginal.length > 31 && ![urlOriginal isEqual:@"http://en.m.wikipedia.org/wiki/Main_Page"]){
         //reformat url string
         NSString *titulo = [urlOriginal substringFromIndex:31];
-        titulo = [titulo capitalizedString]; //capitaliza titulo
-        titulo = [titulo stringByReplacingOccurrencesOfString:@"_And_" withString:@"_and_"];
-        titulo = [titulo stringByReplacingOccurrencesOfString:@"_Of_" withString:@"_of_"];
-        titulo = [titulo stringByReplacingOccurrencesOfString:@"_The_" withString:@"_the_"];
-        titulo = [titulo stringByReplacingOccurrencesOfString:@"_Da_" withString:@"_da_"];
+//        titulo = [titulo capitalizedString]; //capitaliza titulo
+//        titulo = [titulo stringByReplacingOccurrencesOfString:@"_And_" withString:@"_and_"];
+//        titulo = [titulo stringByReplacingOccurrencesOfString:@"_Of_" withString:@"_of_"];
+//        titulo = [titulo stringByReplacingOccurrencesOfString:@"_The_" withString:@"_the_"];
+        //titulo = [titulo stringByReplacingOccurrencesOfString:@"_Da_" withString:@"_da_"];
         NSString *url = [[NSString alloc] initWithFormat:@"http://en.wikipedia.org/w/index.php?title=%@&action=raw", titulo];
         titulo = [titulo stringByReplacingOccurrencesOfString:@"_" withString:@" "];
         NSURL *urlRequest = [NSURL URLWithString:url];
         
-        NSLog(url);
+        //NSLog(url);
         
         
         //check for duplicates
@@ -101,7 +103,22 @@
             
         } else{ //not a duplicate
             NSString *html = [NSString stringWithContentsOfURL:urlRequest encoding:NSUTF8StringEncoding error:nil];
+            
             //NSLog(html);
+            esta = [html rangeOfString:@"#REDIRECT"].location;
+            
+            if (esta== 0) {
+                NSRange loc = [html rangeOfString:@"[["];
+                NSRange loc2 = [html rangeOfString:@"]]"];
+                NSRange searchRange = NSMakeRange(loc.location+2 , (loc2.location-loc.location-2));
+                titulo=[html substringWithRange:searchRange];
+                url = [[NSString alloc] initWithFormat:@"http://en.wikipedia.org/w/index.php?title=%@&action=raw", titulo];
+                url = [url stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+                urlRequest = [NSURL URLWithString:url];
+                html = [NSString stringWithContentsOfURL:urlRequest encoding:NSUTF8StringEncoding error:nil];
+                urlOriginal = [[NSString alloc] initWithFormat:@"http://en.m.wikipedia.org/wiki/%@", titulo];
+                urlOriginal = [urlOriginal stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+            }
             
             if (!html){
                 html = [[NSString alloc] initWithFormat:
